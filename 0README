@@ -1,0 +1,6 @@
+#### Alignment of TSS profling data (Raborn et al., 2016) from multiple Daphnia pulex developmental stages to the PA42_v4.0 genome assembly (Ye et al., In Preparation)
+#### to run this example, please type the following from a linux command line
+#### this assumes that you have set up the config file and installed the appropriate software
+#### edit the batch file (launch_job.sh) as appropriate
+
+qsub launch_job.sh #assumes PBS scheduler; modify as needed depending on the scheduler

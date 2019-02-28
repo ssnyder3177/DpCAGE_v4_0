@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+
+R_PROFILE_USER=""
+R_LIBS="" 
+
+#Setting variables:
+#
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/../scripts/configfile
+
+wf=all
+
+if [ "$wf" == "all" ] ; then
+	${RSCRIPT} --vanilla --default-packages=methods,datasets,utils,grDevices,graphics,stats  CAGE_Dpwf1.Rscript > CAGE_Dpwf1.output
+	${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  CAGE_Dpwf2.Rscript > CAGE_Dpwf2.output
+	${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  CAGE_Dpwf3.Rscript > CAGE_Dpwf3.output
+	${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  CAGE_Dpwf4.Rscript > CAGE_Dpwf4.output
+else
+        ${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  ${EXPERIMENT}wf${wf}.Rscript > ${EXPERIMENT}wf${wf}.output
+fi
