@@ -3,4 +3,5 @@
 #### this assumes that you have set up the config file and installed the appropriate software
 #### edit the batch file (launch_job.sh) as appropriate
 
-qsub launch_job.sh #assumes PBS scheduler; modify as needed depending on the scheduler
+qsub launch_job_Carbonate.sh #assumes PBS scheduler; modify as needed depending on the scheduler
+squeue launch_job_Agave.sh #if running on Agave 
