@@ -52,8 +52,8 @@ cd ..
 
 #Mapping the reads with the BWA aligner:
 #
-#echo "time ${SCRIPTS}/run_BWA_alignment.sh"
-#time ${SCRIPTS}/run_BWA_alignment.sh
+echo "time ${SCRIPTS}/run_BWA_alignment.sh"
+time ${SCRIPTS}/run_BWA_alignment.sh
 
 #Scrubbing and removal of PCR duplicates:
 #
@@ -90,6 +90,7 @@ cd tsr
  for BAM ../BWAdir/*_filtered_sorted.bam; do                                       
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  
   done
+
      ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PA42.4.0.gff
      cd ..
 echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
