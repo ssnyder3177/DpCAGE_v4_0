@@ -1,25 +1,24 @@
 #!/bin/bash
 
-BASEDIR=/N/dc2/scratch/rtraborn/Daphnia_CAGE_PA42_v4_0
+BASEDIR=/home/rraborn/
 GENOME_DIR=DpGENOME/
 GENOME_FILE=PA42.4.1.fasta
 GENOME_GFF=PA42.4.0.gff
 RNAfile=${BASEDIR}/${GENOME_DIR}/Dpul-rDNA.fa
   
-EXPERIMENT=DpCAGE/
-SAMPLE=DpCAGE
+EXPERIMENT=DpCAGEv4_0
+SAMPLE=DpCAGEv4_0
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
 BWA=/N/soft/rhel7/bwa/0.7.12/bwa
-PYTHON3=/N/soft/rhel7/python/3.6.1a/bin/python3
-RSCRIPT=/N/soft/rhel7/r/3.3.1/bin/Rscript
-RSCRIPT=/N/u/rtraborn/Carbonate/genome_analysis/R-3.5.1/bin/Rscript
-SAMTOOLS=/N/soft/rhel7/samtools/1.5/bin/samtools
-SRATOOLKIT=/N/soft/rhel7/sra-toolkit/2.8.2/bin/
-TAGDUST=/N/u/rtraborn/Carbonate/genome_analysis/tagdust-2.33/src/tagdust
-TRIMMOMATIC=/N/soft/rhel7/trimmomatic/0.36/trimmomatic-0.36.jar
-TruSeq2PE=${BASEDIR}/PnGENOME/DpSTRIPE-PE.fa
+PYTHON3=/usr/bin/python3
+RSCRIPT=/usr/bin/Rscript
+SAMTOOLS=/packages/7x/samtools/1.8/bin/samtools
+SRATOOLKIT=/packages/7x/sratoolkit/2.8.0/bin/
+TAGDUST=/home/rraborn/genome_analysis/tagdust-2.33/src/tagdust
+TRIMMOMATIC=/packages/7x/trimmomatic/0.33/trimmomatic.jar
+TruSeq2PE=${BASEDIR}/${GENOME_DIR}/DpSTRIPE-PE.fa
 THREADS=10
 
 R_PROFILE_USER=""

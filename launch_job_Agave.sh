@@ -7,23 +7,11 @@
 #SBATCH -e slurm.%j.err             # STDERR (%j = JobId)
 #SBATCH --mail-type=ALL             # Send a notification
 
-module load sra-toolkit
+module load java
 
-fastqDir=/home/rraborn/DpCAGE_v4_0/Daphnia_CAGE_PA42_v4_0
+echo "Launching job"
 
-mkdir fastq
+cd /home/rraborn/DpCAGE_v4_0/DpCAGE #update to reflect our directory structure
+./xdoit > err
 
-echo "Starting download"
-
-cd $fastqDir/fastq
-
-fastq-dump SRR3356112
-fastq-dump SRR3356113
-fastq-dump SRR3356114
-fastq-dump SRR3356115
-fastq-dump SRR3356116
-fastq-dump SRR3356117
-fastq-dump SRR3356118
-fastq-dump SRR3356119
-
-echo "Download complete"
+echo "Job complete"
