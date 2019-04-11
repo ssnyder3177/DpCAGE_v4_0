@@ -2,20 +2,22 @@
 
 #SBATCH -n 8                        # number of cores
 #SBATCH -t 0-12:00                  # wall time (D-HH:MM)
-##SBATCH -A rraborn                # Account hours will be pulled from (commented out with double # in front)
 #SBATCH -o slurm.%j.out             # STDOUT (%j = JobId)
 #SBATCH -e slurm.%j.err             # STDERR (%j = JobId)
-#SBATCH --mail-type=ALL             # Send a notification
+#SBATCH --mail-type=FAIL             # Send a notification
+#SBATCH --mail-user=ssnyde11@asu.edu #my email address
 
-module load sra-toolkit
+module load sratoolkit/2.8.2-1
 
-fastqDir=/home/rraborn/DpCAGE_v4_0/Daphnia_CAGE_PA42_v4_0
+fastqDir=/home/ssnyde11/DpCAGE_v4_0
 
-mkdir fastq
+cd $fastqDir
+
+#mkdir fastq
+
+cd fastq
 
 echo "Starting download"
-
-cd $fastqDir/fastq
 
 fastq-dump SRR3356112
 fastq-dump SRR3356113

@@ -39,14 +39,14 @@ OP6=${pE_rep3}_trno_tagdusted
 OP7=${males_rep1}_trno_tagdusted
 OP8=${males_rep2}_trno_tagdusted
 
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep1} -o ${OP1}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep2} -o ${OP2}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep3} -o ${OP3}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep1} -o ${OP4}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep2} -o ${OP5}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep3} -o ${OP6}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${males_rep1} -o ${OP7}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${males_rep2} -o ${OP8}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep1} -o ${OP1}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep2} -o ${OP2}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${Asex_rep3} -o ${OP3}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep1} -o ${OP4}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep2} -o ${OP5}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${pE_rep3} -o ${OP6}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${males_rep1} -o ${OP7}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${males_rep2} -o ${OP8}
 
 cd ..
 
@@ -64,7 +64,7 @@ cd ${BWAdir}
 for BAM in *_filtered.bam; do
 
     echo "${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam"
-    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam |                         
+    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam                         
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
 #      left one read of a read pair intact; we also remove read pairs in
@@ -87,7 +87,8 @@ cd tsr
  mkdir BAMDIR
  cd BAMDIR
 
- for BAM ../BWAdir/*_filtered_sorted.bam; do                                       
+ for BAM ../../BWAdir/*_filtered_sorted.bam
+ do                                       
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  
   done
 
