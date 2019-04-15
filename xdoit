@@ -53,7 +53,7 @@ cd ..
 #Mapping the reads with the BWA aligner:
 #
 echo "time ${SCRIPTS}/run_BWA_alignment.sh"
-time ${SCRIPTS}/run_BWA_alignment.sh
+#time ${SCRIPTS}/run_BWA_alignment.sh
 
 #Scrubbing and removal of PCR duplicates:
 #
@@ -61,10 +61,10 @@ BWAdir=${BASEDIR}/${EXPERIMENT}/BWAdir
 
 cd ${BWAdir}
 
-for BAM in *_filtered.bam; do
+#for BAM in *_filtered.bam; do
 
-    echo "${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam"
-    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam                         
+#    echo "${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam"
+#    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -bh > $(basename $BAM _filtered.bam)_filtered_sorted.bam                         
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
 #      left one read of a read pair intact; we also remove read pairs in
@@ -76,7 +76,7 @@ for BAM in *_filtered.bam; do
 
 #${SCRIPTS}/scrubSAMfile.pl -p -i 50 -I 4000 -t 5000 -o $(basename $BAM _filtered.bam).sam -s $(basename $BAM _filtered.bam)_filtered_sorted.sam >& scrub.log              
 
-done
+#done
 
 
 cd ..
@@ -87,7 +87,7 @@ cd tsr
  mkdir BAMDIR
  cd BAMDIR
 
- for BAM ../../BWAdir/*_filtered_sorted.bam
+ for BAM in ../../BWAdir/*_filtered_sorted.bam
  do                                       
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  
   done

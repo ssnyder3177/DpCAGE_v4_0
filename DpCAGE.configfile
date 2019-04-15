@@ -13,7 +13,7 @@ SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
 BWA=/packages/spack/linux-centos7-x86_64/gcc-4.8.5/bwa-0.7.17-fusrahsomx5s4f64jk455gpi7i6xgaza/bin/bwa
 PYTHON3=/usr/bin/python3
-RSCRIPT=/usr/bin/Rscript
+RSCRIPT=/packages/7x/r/3.5.2/bin/Rscript
 SAMTOOLS=/packages/7x/samtools/1.8/bin/samtools
 SRATOOLKIT=/packages/7x/sratoolkit/2.8.0/bin/
 TAGDUST=/home/ssnyde11/tagdust-2.33/src/tagdust

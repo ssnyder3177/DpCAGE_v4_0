@@ -8,11 +8,11 @@ library("dplyr")
 
 
 if (loadWF3) {
-  load("PdSTRIPE_2stepwf3.RData")
+  load("DpCAGE_2stepwf3.RData")
 } else {
-  source("PdSTRIPE_2stepwf3.Rscript")
+  source("DpCAGE_2stepwf3.Rscript")
 }
-cat (PdSTRIPE@title,"\tWorkflow 4\n")
+cat (DpCAGE@title,"\tWorkflow 4\n")
 
 
 #Fine analyses:
@@ -30,7 +30,7 @@ for (mygene in genesOfInterest) {
   show(genes[genes$ID == mygene,])
   
   cat("\n\nTSRs in the gene promoter region:\n")
-  tsr <- PdSTRIPE@tsrData[[1]]
+  tsr <- DpCAGE@tsrData[[1]]
   show(BiocGenerics::subset(tsr, tsr$featureID == mygene))
   
   cat("\n\nTSSs in the gene promoter region as annotated in 'aTSSdf':\n")
