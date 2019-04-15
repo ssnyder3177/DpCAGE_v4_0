@@ -30,7 +30,7 @@ DpCAGE <- processTSS(experimentName=DpCAGE, n.cores=8, tssSet="all", writeTable=
 
 # ... now adding annotation:
 #
-DpCAGE <- importAnnotationExternal(experimentName=DpCAGE, fileType="gff3", annotFile=PdGFF3)
+DpCAGE <- importAnnotationExternal(experimentName=DpCAGE, fileType="gff3", annotFile=DpGFF3)
 
 # ... pulling in gene annotation and looking at "promoter" regions:
 #
