@@ -84,15 +84,15 @@ cd ..
 #Counting TSS tags and determining TSRs with TSRchitect:
 #
 cd tsr
- mkdir BAMDIR
+ #mkdir BAMDIR
  cd BAMDIR
 
- for BAM in ../../BWAdir/*_filtered_sorted.bam
- do                                       
-     ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  
-  done
+ #for BAM in ../../BWAdir/*_filtered_sorted.bam
+ #do                                       
+     #ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  
+ # done
 
-     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PA42.4.0.gff
+     #ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PA42.4.0.gff
      cd ..
 echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
  time ./xrunSwf all

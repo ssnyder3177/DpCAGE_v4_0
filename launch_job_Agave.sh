@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -n 8                        # number of cores
+#SBATCH -n 2                        # number of cores
 #SBATCH -t 0-12:00                  # wall time (D-HH:MM)
 ##SBATCH -A ssnyde11                # Account hours will be pulled from (commented out with double # in front)
 #SBATCH -o slurm.%j.out             # STDOUT (%j = JobId)

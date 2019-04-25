@@ -19,14 +19,14 @@ BAMDIR  <- c("./BAMDIR")
 DpGFF3  <- c("./BAMDIR/PA42.4.0.gff")
 
 # ... initializing the tssObj object:
-DpCAGE <- loadTSSobj("DpCAGE alignment v4_0", BAMDIR, isPairedBAM=FALSE, isPairedBED=FALSE, sampleNames=c("Asex_female", "Male", "pE_female"), replicateIDs=c(1,1,1,2,2,3,3,3))
+DpCAGE <- loadTSSobj("DpCAGE alignment v4_0", BAMDIR, isPairedBAM=FALSE, isPairedBED=FALSE, sampleNames=c("Asex_female-rep1","Asex_female-rep2","Asex_female-rep3","Male-rep1", "Male-rep2", "pE_female-rep1", "pE_female_rep2", "pE_female_rep3"), replicateIDs=c(1,1,1,2,2,3,3,3))
 cat (DpCAGE@title,"\tWorkflow 1\n")
 
 # ... converting BAM data into TSS information and attaching it to the tssObj object:
 DpCAGE <- inputToTSS(DpCAGE)
 
 # ... constructing the tag count per TSS data matrices:
-DpCAGE <- processTSS(experimentName=DpCAGE, n.cores=8, tssSet="all", writeTable=TRUE)
+DpCAGE <- processTSS(experimentName=DpCAGE, n.cores=2, tssSet="all", writeTable=TRUE)
 
 # ... now adding annotation:
 #
